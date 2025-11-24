@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import {Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import CadastroAlunoPage from "../../pages/CadastroAlunoPage";
 
 const cadastroPage = new CadastroAlunoPage();
