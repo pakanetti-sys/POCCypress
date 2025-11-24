@@ -65,8 +65,7 @@ npm install
 
 Instalar também os preprocessadores:
 
-npm install --save-dev cypress-cucumber-preprocessor
-
+npm install
 
 Isso instalará:
 
