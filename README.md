@@ -56,7 +56,7 @@ Cypress Helper (opcional)
 
 No terminal do VS Code:
 git clone https://github.com/pakanetti-sys/POCCypress/tree/main
-cd nome-do-repositorio
+cd POCCypress
 
 3️⃣ Instalar dependências
 npm install
