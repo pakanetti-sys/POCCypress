@@ -1,143 +1,147 @@
 class CadastroAlunoElements {
-  // ---------------------------------------------
-  // ALUNO
-  // ---------------------------------------------
-  nomeAluno = "#first_3";
-  sobrenomeAluno = "#last_3";
+  // -----------------------
+  // CAMPOS DO ALUNO
+  // -----------------------
+  nomeAluno = () => "#first_3";
+  sobrenomeAluno = () => "#last_3";
 
-  // ---------------------------------------------
-  // DATA DE REFERÊNCIA
-  // ---------------------------------------------
-  dataRefDia = "#input_4_day";
-  dataRefMes = "#input_4_month";
-  dataRefAno = "#input_4_year";
+  dataReferenciaDia = () => "#input_4_day";
+  dataReferenciaMes = () => "#input_4_month";
+  dataReferenciaAno = () => "#input_4_year";
 
-  serie = "#input_5";
+  serie = () => "#input_5";
 
-  // ---------------------------------------------
+  // -----------------------
   // RESPONSÁVEIS
-  // ---------------------------------------------
-  maeNome = "#first_6";
-  maeSobrenome = "#last_6";
+  // -----------------------
+  nomeMae = () => "#first_6";
+  sobrenomeMae = () => "#last_6";
 
-  paiNome = "#first_7";
-  paiSobrenome = "#last_7";
+  nomePai = () => "#first_7";
+  sobrenomePai = () => "#last_7";
 
-  // ---------------------------------------------
+  // -----------------------
   // TELEFONES
-  // ---------------------------------------------
-  telResidArea = "#input_8_area";
-  telResidNumero = "#input_8_phone";
+  // -----------------------
+  telResDdd = () => "#input_8_area";
+  telResNum = () => "#input_8_phone";
 
-  telCelArea = "#input_9_area";
-  telCelNumero = "#input_9_phone";
+  telCelDdd = () => "#input_9_area";
+  telCelNum = () => "#input_9_phone";
 
-  telProfArea = "#input_10_area";
-  telProfNumero = "#input_10_phone";
+  telProfDdd = () => "#input_10_area";
+  telProfNum = () => "#input_10_phone";
 
-  // ---------------------------------------------
+  // -----------------------
   // ENDEREÇO
-  // ---------------------------------------------
-  endereco = "#input_11_addr_line1";
-  bairro = "#input_11_addr_line2";
-  cidade = "#input_11_city";
-  estado = "#input_11_state";
-  cep = "#input_11_postal";
-  pais = "#input_11_country";
+  // -----------------------
+  endereco = () => "#input_11_addr_line1";
+  bairro = () => "#input_11_addr_line2";
+  cidade = () => "#input_11_city";
+  estado = () => "#input_11_state";
+  cep = () => "#input_11_postal";
+  pais = () => "#input_11_country";
 
-  // ---------------------------------------------
-  // ÁREA ACADÊMICA (CHECKBOXES)
-  // ---------------------------------------------
-  chkMatematica = "#input_12_0";
-  chkLeitura = "#input_12_1";
-  chkOutro = "#input_12_2";
+  // -----------------------
+  // ÁREA ACADÊMICA
+  // -----------------------
+  areaMatematica = () => "#input_12_0";
+  areaLeitura = () => "#input_12_1";
+  areaOutro = () => "#input_13_2";
 
-  // ---------------------------------------------
+  // -----------------------
   // COMPORTAMENTO
-  // ---------------------------------------------
-  comportamento = "#input_13";
+  // -----------------------
+  comportamento = () => "#input_14_0";
 
-  // ---------------------------------------------
+  // -----------------------
   // PRESENÇA
-  // ---------------------------------------------
-  diasPresenca = "#input_14";
-  diasAusencia = "#input_15";
+  // -----------------------
+  diasPresentes = () => "#input_16";
+  diasAusentes = () => "#input_17";
 
-  // ---------------------------------------------
+  // -----------------------
   // ESCOLAS ANTERIORES
-  // ---------------------------------------------
-  escolasAnteriores = "#input_16";
+  // -----------------------
+  escolasAnteriores = () => "#input_18";
 
-  // ---------------------------------------------
+  // -----------------------
   // PROVAS
-  // ---------------------------------------------
-  provaMatematica = "#input_17";
-  provaPortugues = "#input_18";
+  // -----------------------
+  notaMatematica = () => "#input_20";
+  notaPortugues = () => "#input_21";
 
-  // ---------------------------------------------
+  // -----------------------
   // TRIAGEM
-  // ---------------------------------------------
-  triagemMes = "#input_19_month";
-  triagemDia = "#input_19_day";
-  triagemAno = "#input_19_year";
+  // -----------------------
+  triagemMes = () => "#input_25_month";
+  triagemDia = () => "#input_25_day";
+  triagemAno = () => "#input_25_year";
 
-  triagemResultado = "#input_20";
+  resultadoTriagem = () => "#input_23";
 
-  triagemReavaliacaoSim = "#input_21_0";
-  triagemReavaliacaoNao = "#input_21_1";
+  reavaliacaoSim = () => "#input_26_0";
+  reavaliacaoNao = () => "#input_26_1";
 
-  // ---------------------------------------------
+  // -----------------------
   // DATA DE NASCIMENTO
-  // ---------------------------------------------
-  nascMes = "#input_22_month";
-  nascDia = "#input_22_day";
-  nascAno = "#input_22_year";
+  // -----------------------
+  nascMes = () => "#input_27_month";
+  nascDia = () => "#input_27_day";
+  nascAno = () => "#input_27_year";
 
-  // ---------------------------------------------
+  // -----------------------
   // VISÃO
-  // ---------------------------------------------
-  visaoMes = "#input_23_month";
-  visaoDia = "#input_23_day";
-  visaoAno = "#input_23_year";
+  // -----------------------
+  visaoMes = () => "#input_27_month";
+  visaoDia = () => "#input_27_day";
+  visaoAno = () => "#input_27_year";
 
-  visaoResultado = "#input_24";
+  resultadoVisao = () => "#input_24";
 
-  visaoRechecagemSim = "#input_25_0";
-  visaoRechecagemNao = "#input_25_1";
+  rechecagemVisaoSim = () => "#input_30_0";
+  rechecagemVisaoNao = () => "#input_30_1";
 
-  // ---------------------------------------------
+  // -----------------------
   // NECESSIDADES ESPECIAIS
-  // ---------------------------------------------
-  necessidadesEspeciais = "#input_26";
+  // -----------------------
+  necessidadesEspeciais = () => "#input_24";
 
-  // ---------------------------------------------
+  // -----------------------
   // DISCIPLINA
-  // ---------------------------------------------
-  relatoriosDisciplina = "#input_27";
-  suspensoes = "#input_28";
-  suspensoesEscola = "#input_29";
-  suspensoesFora = "#input_30";
+  // -----------------------
+  relatoriosDisciplina = () => "#input_32";
+  suspensoes = () => "#input_33";
+  suspensoesEscola = () => "#input_34";
+  suspensoesFora = () => "#input_35";
 
-  // ---------------------------------------------
-  // NOTAS
-  // ---------------------------------------------
-  notaLeitura = "#input_31";
-  notaCiencias = "#input_32";
-  notaSociais = "#input_33";
-  notaEdFisica = "#input_34";
-  notaOutro = "#input_35";
+  // -----------------------
+  // NOTAS FINAIS
+  // -----------------------
+  notaPortuguesFinal = () => "#input_38_0";
+  notaLeituraFinal = () => "#input_38_1";
+  notaMatematicaFinal = () => "#input_38_2";
+  notaCiencias = () => "#input_38_3";
+  notaSociais = () => "#input_38_4";
+  notaEdFisica = () => "#input_38_5";
+  notaOutroFinal = () => "#input_38_6";
 
-  // ---------------------------------------------
+  // -----------------------
   // RETENÇÃO
-  // ---------------------------------------------
-  anoRetencao = "#input_36";
-  notasRetencao = "#input_37";
-  escolaAnterior = "#input_38";
+  // -----------------------
+  retencaoAno = () => "#input_36";
+  retencaoNotas = () => "#input_40";
+  retencaoEscolaAnterior = () => "#input_42";
 
-  // ---------------------------------------------
-  // ENVIO
-  // ---------------------------------------------
-  enviar = "#input_39";
+  // -----------------------
+  // ENVIO DO FORMULÁRIO
+  // -----------------------
+  botaoEnviar = () => "#input_2";
+
+  // -----------------------
+  // CONFIRMAÇÃO
+  // -----------------------
+  mensagemSucesso = () => ".thankyou-main-text.ty-text";
 }
 
 export default CadastroAlunoElements;

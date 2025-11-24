@@ -38,4 +38,8 @@
   // Validação opcional – se quiser, pode remover
   //cy.url().should("include", "/inventory.html");
 //});
+Cypress.Commands.add("stepScreenshot", (name) => {
+  cy.screenshot(name);
+});
+
 

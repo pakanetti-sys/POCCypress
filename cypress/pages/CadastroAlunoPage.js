@@ -1,262 +1,318 @@
+import CadastroAlunoElements from "../elements/CadastroAlunoElements";
+
 class CadastroAlunoPage {
-  acessarFormulario() {
-    cy.visit("https://www.jotform.com/form/253263543176660");
-    cy.get("form").should("be.visible");
+  constructor() {
+    this.el = new CadastroAlunoElements();
   }
 
-  // ---------------------------------------------
-  // ALUNO
-  // ---------------------------------------------
+  // Função para normalizar dias (remove zero à esquerda)
+  normalizarDia(dia) {
+    return parseInt(dia, 10).toString();
+  }
+
+  // -------------------------
+  // ACESSAR FORMULÁRIO
+  // -------------------------
+  acessarFormulario() {
+    cy.visit("https://www.jotform.com/form/253263543176660");
+    cy.wait(1500);
+  }
+
+  // -------------------------
+  // CAMPOS DO ALUNO
+  // -------------------------
   preencherNomeAluno(nome) {
-    cy.get("#first_3").clear().type(nome);
+    cy.get(this.el.nomeAluno()).clear().type(nome);
   }
 
   preencherSobrenomeAluno(sobrenome) {
-    cy.get("#last_3").clear().type(sobrenome);
+    cy.get(this.el.sobrenomeAluno()).clear().type(sobrenome);
   }
 
-  // ---------------------------------------------
-  // DATA DE REFERÊNCIA
-  // ---------------------------------------------
   preencherDataReferencia(dia, mes, ano) {
-    cy.get("#input_4_day").select(dia);
-    cy.get("#input_4_month").select(mes);
-    cy.get("#input_4_year").select(ano);
+    cy.get(this.el.dataReferenciaDia()).select(this.normalizarDia(dia));
+    cy.get(this.el.dataReferenciaMes()).select(mes);
+    cy.get(this.el.dataReferenciaAno()).select(ano);
   }
 
   selecionarSerie(serie) {
-    cy.get("#input_5").select(serie);
+    cy.get(this.el.serie()).clear().type(serie);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // RESPONSÁVEIS
-  // ---------------------------------------------
+  // -------------------------
   preencherNomeMae(nome) {
-    cy.get("#first_6").clear().type(nome);
+    cy.get(this.el.nomeMae()).clear().type(nome);
   }
 
   preencherSobrenomeMae(sobrenome) {
-    cy.get("#last_6").clear().type(sobrenome);
+    cy.get(this.el.sobrenomeMae()).clear().type(sobrenome);
   }
 
   preencherNomePai(nome) {
-    cy.get("#first_7").clear().type(nome);
+    cy.get(this.el.nomePai()).clear().type(nome);
   }
 
   preencherSobrenomePai(sobrenome) {
-    cy.get("#last_7").clear().type(sobrenome);
+    cy.get(this.el.sobrenomePai()).clear().type(sobrenome);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // TELEFONES
-  // ---------------------------------------------
+  // -------------------------
   preencherTelefoneResidencial(ddd, numero) {
-    cy.get("#input_8_area").clear().type(ddd);
-    cy.get("#input_8_phone").clear().type(numero);
+    cy.get(this.el.telResDdd()).clear().type(ddd);
+    cy.get(this.el.telResNum()).clear().type(numero);
   }
 
   preencherTelefoneCelular(ddd, numero) {
-    cy.get("#input_9_area").clear().type(ddd);
-    cy.get("#input_9_phone").clear().type(numero);
+    cy.get(this.el.telCelDdd()).clear().type(ddd);
+    cy.get(this.el.telCelNum()).clear().type(numero);
   }
 
   preencherTelefoneProfissional(ddd, numero) {
-    cy.get("#input_10_area").clear().type(ddd);
-    cy.get("#input_10_phone").clear().type(numero);
+    cy.get(this.el.telProfDdd()).clear().type(ddd);
+    cy.get(this.el.telProfNum()).clear().type(numero);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // ENDEREÇO
-  // ---------------------------------------------
+  // -------------------------
   preencherEndereco(valor) {
-    cy.get("#input_11_addr_line1").clear().type(valor);
+    cy.get(this.el.endereco()).clear().type(valor);
   }
 
   preencherBairro(valor) {
-    cy.get("#input_11_addr_line2").clear().type(valor);
+    cy.get(this.el.bairro()).clear().type(valor);
   }
 
   preencherCidade(valor) {
-    cy.get("#input_11_city").clear().type(valor);
+    cy.get(this.el.cidade()).clear().type(valor);
   }
 
   preencherEstado(valor) {
-    cy.get("#input_11_state").clear().type(valor);
+    cy.get(this.el.estado()).clear().type(valor);
   }
 
   preencherCEP(valor) {
-    cy.get("#input_11_postal").clear().type(valor);
+    cy.get(this.el.cep()).clear().type(valor);
   }
 
   selecionarPais(valor) {
-    cy.get("#input_11_country").select(valor);
+    cy.get(this.el.pais()).select(valor);
   }
 
-  // ---------------------------------------------
-  // ÁREA ACADÊMICA
-  // ---------------------------------------------
+  // -------------------------
+  // ÁREA ACADÊMICA (DINÂMICO)
+  // -------------------------
   selecionarAreaAcademica(mat, leitura, outro) {
-    if (mat === "Sim") cy.get("#input_12_0").check({ force: true });
-    if (leitura === "Sim") cy.get("#input_12_1").check({ force: true });
-    if (outro === "Sim") cy.get("#input_12_2").check({ force: true });
+    const matFlag = mat === "true";
+    const leituraFlag = leitura === "true";
+    const outroFlag = outro === "true";
+
+    if (matFlag) {
+      cy.contains("label", "Matemática")
+        .invoke("attr", "for")
+        .then((id) => cy.get(`#${id}`).check({ force: true }));
+    }
+
+    if (leituraFlag) {
+      cy.contains("label", "Leitura")
+        .invoke("attr", "for")
+        .then((id) => cy.get(`#${id}`).check({ force: true }));
+    }
+
+    if (outroFlag) {
+      cy.contains("label", "Outro")
+        .invoke("attr", "for")
+        .then((id) => cy.get(`#${id}`).check({ force: true }));
+    }
   }
 
-  // ---------------------------------------------
+  // ---------------------------------------
   // COMPORTAMENTO
-  // ---------------------------------------------
+  // ---------------------------------------
   selecionarComportamento(valor) {
-    cy.get("#input_13").select(valor);
+    if (valor === "Sim") {
+      cy.get(this.el.comportamento())
+        .should("exist")
+        .check({ force: true });
+    } else {
+      cy.get(this.el.comportamento())
+        .should("exist")
+        .uncheck({ force: true });
+    }
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // PRESENÇA
-  // ---------------------------------------------
+  // -------------------------
   preencherDiasPresenca(valor) {
-    cy.get("#input_14").clear().type(valor);
+    cy.get(this.el.diasPresentes()).clear().type(valor);
   }
 
   preencherDiasAusencia(valor) {
-    cy.get("#input_15").clear().type(valor);
+    cy.get(this.el.diasAusentes()).clear().type(valor);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // ESCOLAS ANTERIORES
-  // ---------------------------------------------
+  // -------------------------
   preencherEscolasAnteriores(texto) {
-    cy.get("#input_16").clear().type(texto);
+    cy.get(this.el.escolasAnteriores()).clear().type(texto);
   }
 
-  // ---------------------------------------------
-  // PROVAS
-  // ---------------------------------------------
-  preencherNotaMatematica(valor) {
-    cy.get("#input_17").clear().type(valor);
+  // -------------------------
+  // NOTAS INICIAIS
+  // -------------------------
+  preencherNotaMatematica(nota) {
+    cy.get(this.el.notaMatematica()).clear().type(nota);
   }
 
-  preencherNotaPortugues(valor) {
-    cy.get("#input_18").clear().type(valor);
+  preencherNotaPortugues(nota) {
+    cy.get(this.el.notaPortugues()).clear().type(nota);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // TRIAGEM
-  // ---------------------------------------------
+  // -------------------------
   preencherDataTriagem(mes, dia, ano) {
-    cy.get("#input_19_month").select(mes);
-    cy.get("#input_19_day").select(dia);
-    cy.get("#input_19_year").select(ano);
+    cy.get(this.el.triagemMes()).select(mes);
+    cy.get(this.el.triagemDia()).select(this.normalizarDia(dia));
+    cy.get(this.el.triagemAno()).select(ano);
   }
 
   preencherResultadoTriagem(valor) {
-    cy.get("#input_20").clear().type(valor);
+    cy.get(this.el.resultadoTriagem()).clear().type(valor);
   }
 
-  selecionarReavaliacao(valor) {
-    valor === "Sim"
-      ? cy.get("#input_21_0").check({ force: true })
-      : cy.get("#input_21_1").check({ force: true });
+  selecionarReavaliacao(opcao) {
+    if (opcao === "Sim") {
+      cy.get(this.el.reavaliacaoSim()).check({ force: true });
+    } else {
+      cy.get(this.el.reavaliacaoNao()).check({ force: true });
+    }
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // NASCIMENTO
-  // ---------------------------------------------
+  // -------------------------
   preencherDataNascimento(mes, dia, ano) {
-    cy.get("#input_22_month").select(mes);
-    cy.get("#input_22_day").select(dia);
-    cy.get("#input_22_year").select(ano);
+    cy.get(this.el.nascMes()).select(mes);
+    cy.get(this.el.nascDia()).select(this.normalizarDia(dia));
+    cy.get(this.el.nascAno()).select(ano);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // VISÃO
-  // ---------------------------------------------
+  // -------------------------
   preencherDataVisao(mes, dia, ano) {
-    cy.get("#input_23_month").select(mes);
-    cy.get("#input_23_day").select(dia);
-    cy.get("#input_23_year").select(ano);
+    cy.get(this.el.visaoMes()).select(mes);
+    cy.get(this.el.visaoDia()).select(this.normalizarDia(dia));
+    cy.get(this.el.visaoAno()).select(ano);
   }
 
   preencherResultadoVisao(valor) {
-    cy.get("#input_24").clear().type(valor);
+    cy.get(this.el.resultadoVisao()).clear().type(valor);
   }
 
   selecionarRechecagemVisao(valor) {
-    valor === "Sim"
-      ? cy.get("#input_25_0").check({ force: true })
-      : cy.get("#input_25_1").check({ force: true });
+    if (valor === "Sim") {
+      cy.get(this.el.rechecagemVisaoSim()).check({ force: true });
+    } else {
+      cy.get(this.el.rechecagemVisaoNao()).check({ force: true });
+    }
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // NECESSIDADES ESPECIAIS
-  // ---------------------------------------------
+  // -------------------------
   preencherNecessidadesEspeciais(texto) {
-    cy.get("#input_26").clear().type(texto);
+    cy.get(this.el.necessidadesEspeciais()).clear().type(texto);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // DISCIPLINA
-  // ---------------------------------------------
+  // -------------------------
   preencherRelatoriosDisciplina(valor) {
-    cy.get("#input_27").clear().type(valor);
+    cy.get(this.el.relatoriosDisciplina()).clear().type(valor);
   }
 
   preencherSuspensoes(valor) {
-    cy.get("#input_28").clear().type(valor);
+    cy.get(this.el.suspensoes()).clear().type(valor);
   }
 
   preencherSuspensoesEscola(valor) {
-    cy.get("#input_29").clear().type(valor);
+    cy.get(this.el.suspensoesEscola()).clear().type(valor);
   }
 
   preencherSuspensoesFora(valor) {
-    cy.get("#input_30").clear().type(valor);
+    cy.get(this.el.suspensoesFora()).clear().type(valor);
   }
 
-  // ---------------------------------------------
-  // NOTAS
-  // ---------------------------------------------
-  preencherNotaLeitura(valor) {
-    cy.get("#input_31").clear().type(valor);
+  // -------------------------
+  // NOTAS FINAIS
+  // -------------------------
+
+  preencherNotaPortuguesFinal(nota) {
+    cy.get(this.el.notaPortuguesFinal()).clear().type(nota);
+  } 
+
+  preencherNotaLeituraFinal(nota) {
+    cy.get(this.el.notaLeituraFinal()).clear().type(nota);
   }
 
-  preencherNotaCiencias(valor) {
-    cy.get("#input_32").clear().type(valor);
+  preencherNotaMatematicaFinal(nota) {
+    cy.get(this.el.notaMatematicaFinal()).clear().type(nota);
   }
 
-  preencherNotaSociais(valor) {
-    cy.get("#input_33").clear().type(valor);
+  preencherNotaCiencias(nota) {
+    cy.get(this.el.notaCiencias()).clear().type(nota);
   }
 
-  preencherNotaEdFisica(valor) {
-    cy.get("#input_34").clear().type(valor);
+  preencherNotaSociais(nota) {
+    cy.get(this.el.notaSociais()).clear().type(nota);
   }
 
-  preencherNotaOutro(valor) {
-    cy.get("#input_35").clear().type(valor);
+  preencherNotaEdFisica(nota) {
+    cy.get(this.el.notaEdFisica()).clear().type(nota);
   }
 
-  // ---------------------------------------------
+  preencherNotaOutro(nota) {
+    cy.get(this.el.notaOutroFinal()).clear().type(nota);
+  }
+
+  // -------------------------
   // RETENÇÃO
-  // ---------------------------------------------
+  // -------------------------
   preencherAnoRetencao(valor) {
-    cy.get("#input_36").clear().type(valor);
+    cy.get(this.el.retencaoAno()).clear().type(valor);
   }
 
   preencherNotasRetencao(valor) {
-    cy.get("#input_37").clear().type(valor);
+    cy.get(this.el.retencaoNotas()).clear().type(valor);
   }
 
-  preencherEscolaAnterior(valor) {
-    cy.get("#input_38").clear().type(valor);
+  preencherEscolaAnterior(texto) {
+    cy.get(this.el.retencaoEscolaAnterior()).clear().type(texto);
   }
 
-  // ---------------------------------------------
+  // -------------------------
   // ENVIO
-  // ---------------------------------------------
+  // -------------------------
   enviarFormulario() {
-    cy.get("#input_39").click({ force: true });
+    cy.get(this.el.botaoEnviar()).click();
+    cy.wait(1500);
   }
 
+  // -------------------------
+  // VALIDAÇÃO
+  // -------------------------
   validarMensagemSucesso(mensagem) {
-    cy.contains(mensagem).should("be.visible");
+    cy.get(this.el.mensagemSucesso())
+      .should("be.visible")
+      .contains(mensagem);
   }
 }
 

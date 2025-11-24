@@ -1,39 +1,19 @@
 {
   "name": "cucumber_cypress_project",
   "version": "1.0.0",
-  "description": "Cypress Cucumber",
-  "keywords": [
-    "Cypress",
-    "BDD",
-    "Cucumber"
-  ],
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:tests": "cypress run",
-    "test": "npx cypress open",
-    "cy:run": "npx cypress run",
-    "cy:verify": "npx cypress verify"
-  },
-  "dependencies": {
-    "node.js": "^0.0.1-security",
-    "prettier": "^3.6.2"
+    "cy:run": "cypress run"
   },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
-    "@cucumber/cucumber": "^12.2.0",
-    "@cypress/webpack-preprocessor": "^7.0.2",
-    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "cypress": "^15.7.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
-    "esbuild": "^0.27.0",
-    "raw-loader": "^4.0.2"
+    "@badeball/cypress-cucumber-preprocessor": "21.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "2.2.7",
+    "@types/node": "20.0.0",
+    "cypress": "13.17.0",
+    "esbuild": "0.19.12"
   },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+  "dependencies": {
+    "docx": "^9.5.1"
   }
 }
