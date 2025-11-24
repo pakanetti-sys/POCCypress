@@ -8,7 +8,15 @@ const cadastroPage = new CadastroAlunoPage();
 // ------------------------------------------------------
 Given("que estou na página do formulário de alunos", () => {
   cadastroPage.acessarFormulario();
-  cy.stepScreenshot("01-background");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_01-background`);
 });
 
 
@@ -21,7 +29,15 @@ When("preencho o campo Nome do estudante {string}", (nome) => {
 
 When("preencho o Sobrenome do estudante {string}", (sobrenome) => {
   cadastroPage.preencherSobrenomeAluno(sobrenome);
-  cy.stepScreenshot("02-campos-basicos");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_02-campos-basicos`);
 });
 
 
@@ -31,11 +47,16 @@ When("preencho o Sobrenome do estudante {string}", (sobrenome) => {
 When(
   "seleciono a Data de referência {string} {string} {string}",
   (dia, mes, ano) => {
-    cadastroPage.preencherDataReferencia(dia, mes, ano);
-    cy.stepScreenshot("03-data-referencia");
-  }
-);
-
+const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_03-data-referencia`);
+});
 
 
 // ------------------------------------------------------
@@ -43,7 +64,15 @@ When(
 // ------------------------------------------------------
 When("seleciono a Série {string}", (serie) => {
   cadastroPage.selecionarSerie(serie);
-  cy.stepScreenshot("04-serie");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_04-serie`);
 });
 
 
@@ -64,7 +93,15 @@ When("preencho o nome do pai {string}", (nome) => {
 
 When("preencho o sobrenome do pai {string}", (sobrenome) => {
   cadastroPage.preencherSobrenomePai(sobrenome);
-  cy.stepScreenshot("05-responsaveis");
+const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_05-responsaveis`);
 });
 
 
@@ -84,9 +121,16 @@ When("preencho o telefone celular {string} {string}", (ddd, numero) => {
 
 When("preencho o telefone profissional {string} {string}", (ddd, numero) => {
   cadastroPage.preencherTelefoneProfissional(ddd, numero);
-  cy.stepScreenshot("06-telefones");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_06-telefones`);
 });
-
 
 
 // ------------------------------------------------------
@@ -114,7 +158,15 @@ When("preencho o CEP {string}", (cep) => {
 
 When("seleciono o país {string}", (pais) => {
   cadastroPage.selecionarPais(pais);
-  cy.stepScreenshot("07-endereco");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_07-endereco`);
 });
 
 
@@ -125,9 +177,16 @@ When(
   "seleciono áreas acadêmicas {string} {string} {string}",
   (mat, leitura, outro) => {
     cadastroPage.selecionarAreaAcademica(mat, leitura, outro);
-    cy.stepScreenshot("08-area-academica");
-  }
-);
+    const now = new Date();
+    const pad = v => v.toString().padStart(2, '0');
+    const timeStr =
+      pad(now.getDate()) +
+      pad(now.getMonth() + 1) +
+      pad(now.getHours()) +
+      pad(now.getMinutes()) +
+      pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_08-area-academica`);
+});
 
 
 // ------------------------------------------------------
@@ -135,9 +194,16 @@ When(
 // ------------------------------------------------------
 When("seleciono comportamento {string}", (comportamento) => {
   cadastroPage.selecionarComportamento(comportamento);
-  cy.stepScreenshot("09-comportamento");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_09-comportamento`);
 });
-
 
 // ------------------------------------------------------
 // PRESENÇA
@@ -148,7 +214,15 @@ When("preencho os dias presentes {string}", (dias) => {
 
 When("preencho os dias ausentes {string}", (dias) => {
   cadastroPage.preencherDiasAusencia(dias);
-  cy.stepScreenshot("10-presenca");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_10-presenca`);
 });
 
 
@@ -157,7 +231,15 @@ When("preencho os dias ausentes {string}", (dias) => {
 // ------------------------------------------------------
 When("preencho lista de escolas anteriores {string}", (texto) => {
   cadastroPage.preencherEscolasAnteriores(texto);
-  cy.stepScreenshot("11-escolas-anteriores");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_11-escolas-anteriores`);
 });
 
 
@@ -170,7 +252,15 @@ When("preencho nota de Matemática {string}", (nota) => {
 
 When("preencho nota de Português {string}", (nota) => {
   cadastroPage.preencherNotaPortugues(nota);
-  cy.stepScreenshot("12-provas");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_12-provas`);
 });
 
 
@@ -191,9 +281,16 @@ When("preencho resultado da triagem {string}", (resultado) => {
 
 When("seleciono necessidade de reavaliação {string}", (opcao) => {
   cadastroPage.selecionarReavaliacao(opcao);
-  cy.stepScreenshot("13-triagem");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_13-triagem`);
 });
-
 
 
 // ------------------------------------------------------
@@ -205,6 +302,7 @@ When(
     cadastroPage.preencherDataNascimento(mes, dia, ano);
   }
 );
+
 
 // ------------------------------------------------------
 // VISÃO
@@ -222,7 +320,15 @@ When("preencho resultado da visão {string}", (resultado) => {
 
 When("seleciono rechecagem de visão {string}", (resultado) => {
   cadastroPage.selecionarRechecagemVisao(resultado);
-  cy.stepScreenshot("14-visao");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_14-visao`);
 });
 
 
@@ -231,7 +337,15 @@ When("seleciono rechecagem de visão {string}", (resultado) => {
 // ------------------------------------------------------
 When("preencho necessidades especiais {string}", (texto) => {
   cadastroPage.preencherNecessidadesEspeciais(texto);
-  cy.stepScreenshot("15-necessidades-especiais");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_15-necessidades-especiais`);
 });
 
 
@@ -252,8 +366,17 @@ When("preencho suspensões na escola {string}", (valor) => {
 
 When("preencho suspensões fora da escola {string}", (valor) => {
   cadastroPage.preencherSuspensoesFora(valor);
-  cy.stepScreenshot("16-disciplina");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_16-disciplina`);
 });
+
 
 
 // ------------------------------------------------------
@@ -285,7 +408,15 @@ When("preencho nota final de educação física {string}", (nota) => {
 
 When("preencho outra nota {string}", (nota) => {
   cadastroPage.preencherNotaOutro(nota);
-  cy.stepScreenshot("17-notas-finais");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_17-notas-finais`);
 });
 
 
@@ -302,7 +433,15 @@ When("preencho notas da retenção {string}", (valor) => {
 
 When("preencho escola anterior {string}", (texto) => {
   cadastroPage.preencherEscolaAnterior(texto);
-  cy.stepScreenshot("18-retencao");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_18-retencao`);
 });
 
 // ------------------------------------------------------
@@ -310,15 +449,23 @@ When("preencho escola anterior {string}", (texto) => {
 // ------------------------------------------------------
 When("envio o formulário", () => {
   cadastroPage.enviarFormulario();
-  cy.stepScreenshot("19-envio");
 });
+
 
 // ------------------------------------------------------
 // VALIDAÇÃO
 // ------------------------------------------------------
 Then("devo ver a mensagem de confirmação {string}", (mensagem) => {
   cadastroPage.validarMensagemSucesso(mensagem);
-  cy.stepScreenshot("20-validacao");
+  const now = new Date();
+  const pad = v => v.toString().padStart(2, '0');
+  const timeStr =
+    pad(now.getDate()) +
+    pad(now.getMonth() + 1) +
+    pad(now.getHours()) +
+    pad(now.getMinutes()) +
+    pad(now.getSeconds());
+  cy.stepScreenshot(`${timeStr}_19-validacao`);
 });
 
 
