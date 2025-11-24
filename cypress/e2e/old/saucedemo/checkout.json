@@ -1,0 +1,13 @@
+{
+  "infoPagamento": {
+    "cartao": "4111111111111111",
+    "validade": "12/29",
+    "cvv": "123"
+  },
+  "infoEntrega": {
+    "endereco": "Rua Teste 123",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "12345-000"
+  }
+}

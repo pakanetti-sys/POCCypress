@@ -1,0 +1,211 @@
+[
+  {
+    "nomeAluno": "Lucas",
+    "sobrenomeAluno": "Ferreira",
+    "dataRefDia": "10",
+    "dataRefMes": "02",
+    "dataRefAno": "2024",
+    "serie": "5º Ano",
+
+    "maeNome": "Carla",
+    "maeSobrenome": "Ferreira",
+    "paiNome": "Roberto",
+    "paiSobrenome": "Ferreira",
+
+    "telResidArea": "11",
+    "telResidNumero": "34567890",
+    "telCelArea": "11",
+    "telCelNumero": "987654321",
+    "telProfArea": "11",
+    "telProfNumero": "33445566",
+
+    "endereco": "Rua das Flores, 123",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "01001000",
+    "pais": "Brazil",
+
+    "areaAcademica": ["Matematica", "Leitura"],
+    "comportamento": "Extrovertido",
+
+    "diasPresenca": "180",
+    "diasAusencia": "5",
+
+    "escolasAnteriores": "Escola Municipal Primavera",
+    "provaMatematica": "85",
+    "provaPortugues": "78",
+
+    "triagemMes": "03",
+    "triagemDia": "12",
+    "triagemAno": "2023",
+    "triagemResultado": "Regular",
+    "triagemReavaliacao": "Nao",
+
+    "nascMes": "05",
+    "nascDia": "18",
+    "nascAno": "2013",
+
+    "visaoMes": "02",
+    "visaoDia": "20",
+    "visaoAno": "2023",
+    "visaoResultado": "Normal",
+    "visaoRechecagem": "Nao",
+
+    "necessidadesEspeciais": "Nenhuma",
+    "relatoriosDisciplina": "0",
+    "suspensoes": "0",
+    "suspensoesEscola": "0",
+    "suspensoesFora": "0",
+
+    "notaLeitura": "A",
+    "notaCiencias": "B",
+    "notaSociais": "A",
+    "notaEdFisica": "A",
+    "notaOutro": "A",
+
+    "anoRetencao": "Nenhum",
+    "notasRetencao": "N/A",
+    "escolaAnterior": "Escola Municipal Primavera"
+  },
+
+  {
+    "nomeAluno": "Mariana",
+    "sobrenomeAluno": "Souza",
+    "dataRefDia": "22",
+    "dataRefMes": "03",
+    "dataRefAno": "2024",
+    "serie": "6º Ano",
+
+    "maeNome": "Fernanda",
+    "maeSobrenome": "Souza",
+    "paiNome": "Marcelo",
+    "paiSobrenome": "Souza",
+
+    "telResidArea": "21",
+    "telResidNumero": "22334455",
+    "telCelArea": "21",
+    "telCelNumero": "998877665",
+    "telProfArea": "21",
+    "telProfNumero": "33442211",
+
+    "endereco": "Av. Central, 900",
+    "bairro": "Centro",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "cep": "20040002",
+    "pais": "Brazil",
+
+    "areaAcademica": ["Leitura"],
+    "comportamento": "Introvertido",
+
+    "diasPresenca": "170",
+    "diasAusencia": "12",
+
+    "escolasAnteriores": "Colégio Santa Maria",
+    "provaMatematica": "92",
+    "provaPortugues": "88",
+
+    "triagemMes": "01",
+    "triagemDia": "15",
+    "triagemAno": "2023",
+    "triagemResultado": "Bom",
+    "triagemReavaliacao": "Nao",
+
+    "nascMes": "08",
+    "nascDia": "10",
+    "nascAno": "2012",
+
+    "visaoMes": "02",
+    "visaoDia": "25",
+    "visaoAno": "2023",
+    "visaoResultado": "Normal",
+    "visaoRechecagem": "Nao",
+
+    "necessidadesEspeciais": "Nenhuma",
+    "relatoriosDisciplina": "1",
+    "suspensoes": "0",
+    "suspensoesEscola": "0",
+    "suspensoesFora": "0",
+
+    "notaLeitura": "A",
+    "notaCiencias": "A",
+    "notaSociais": "B",
+    "notaEdFisica": "A",
+    "notaOutro": "A",
+
+    "anoRetencao": "Nenhum",
+    "notasRetencao": "N/A",
+    "escolaAnterior": "Colégio Santa Maria"
+  },
+
+  {
+    "nomeAluno": "Rafael",
+    "sobrenomeAluno": "Oliveira",
+    "dataRefDia": "05",
+    "dataRefMes": "04",
+    "dataRefAno": "2024",
+    "serie": "7º Ano",
+
+    "maeNome": "Patrícia",
+    "maeSobrenome": "Oliveira",
+    "paiNome": "Carlos",
+    "paiSobrenome": "Oliveira",
+
+    "telResidArea": "31",
+    "telResidNumero": "30112233",
+    "telCelArea": "31",
+    "telCelNumero": "987771122",
+    "telProfArea": "31",
+    "telProfNumero": "34332211",
+
+    "endereco": "Rua Minas Gerais, 45",
+    "bairro": "Funcionários",
+    "cidade": "Belo Horizonte",
+    "estado": "MG",
+    "cep": "30130110",
+    "pais": "Brazil",
+
+    "areaAcademica": ["Matematica", "Outro"],
+    "comportamento": "Extrovertido",
+
+    "diasPresenca": "160",
+    "diasAusencia": "20",
+
+    "escolasAnteriores": "Colégio Horizonte",
+    "provaMatematica": "75",
+    "provaPortugues": "80",
+
+    "triagemMes": "02",
+    "triagemDia": "28",
+    "triagemAno": "2023",
+    "triagemResultado": "Regular",
+    "triagemReavaliacao": "Sim",
+
+    "nascMes": "09",
+    "nascDia": "28",
+    "nascAno": "2011",
+
+    "visaoMes": "03",
+    "visaoDia": "10",
+    "visaoAno": "2023",
+    "visaoResultado": "Atenção",
+    "visaoRechecagem": "Sim",
+
+    "necessidadesEspeciais": "Atenção no acompanhamento escolar",
+    "relatoriosDisciplina": "3",
+    "suspensoes": "1",
+    "suspensoesEscola": "1",
+    "suspensoesFora": "0",
+
+    "notaLeitura": "B",
+    "notaCiencias": "C",
+    "notaSociais": "B",
+    "notaEdFisica": "A",
+    "notaOutro": "B",
+
+    "anoRetencao": "2021",
+    "notasRetencao": "Recuperação necessária",
+    "escolaAnterior": "Colégio Horizonte"
+  }
+]
