@@ -36,6 +36,7 @@ cypress/
       └── e2e.js
 
 ▶ Como executar no Visual Studio Code
+
 1️⃣ Requisitos
 
 Certifique-se de ter instalado:
@@ -56,16 +57,15 @@ Cypress Helper (opcional)
 
 No terminal do VS Code:
 git clone https://github.com/pakanetti-sys/POCCypress/tree/main
-cd POCCypress
+
+Acessar o Projeto: cd POCCypress
 
 3️⃣ Instalar dependências
 npm install
 
 Instalar também os preprocessadores:
 
-npm install @badeball/cypress-cucumber-preprocessor \
-            @bahmutov/cypress-esbuild-preprocessor \
-            esbuild --save-dev
+npm install --save-dev cypress-cucumber-preprocessor
 
 
 Isso instalará:
